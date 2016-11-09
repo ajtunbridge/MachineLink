@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLink.Service", "MachineLink.Service\MachineLink.Service.csproj", "{AFFC85C7-7EFB-4657-A357-2233AD2C041E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLink.Host", "MachineLink.Host\MachineLink.Host.csproj", "{6DE918F6-3E55-419B-98F9-1909D3CF1070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLink.IO", "MachineLink.IO\MachineLink.IO.csproj", "{D24B447F-6B82-4F95-AF08-FC94653F0961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLink.DesktopClient", "MachineLink.DesktopClient\MachineLink.DesktopClient.csproj", "{B1556897-0274-4B55-BF7C-F9D9CD4D3162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLink.DroidClient", "MachineLink.DroidClient\MachineLink.DroidClient.csproj", "{1B102ABE-D00A-4651-A345-BC1063EF6B0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFFC85C7-7EFB-4657-A357-2233AD2C041E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFC85C7-7EFB-4657-A357-2233AD2C041E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFC85C7-7EFB-4657-A357-2233AD2C041E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFC85C7-7EFB-4657-A357-2233AD2C041E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE918F6-3E55-419B-98F9-1909D3CF1070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE918F6-3E55-419B-98F9-1909D3CF1070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE918F6-3E55-419B-98F9-1909D3CF1070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE918F6-3E55-419B-98F9-1909D3CF1070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24B447F-6B82-4F95-AF08-FC94653F0961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24B447F-6B82-4F95-AF08-FC94653F0961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24B447F-6B82-4F95-AF08-FC94653F0961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24B447F-6B82-4F95-AF08-FC94653F0961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1556897-0274-4B55-BF7C-F9D9CD4D3162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1556897-0274-4B55-BF7C-F9D9CD4D3162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1556897-0274-4B55-BF7C-F9D9CD4D3162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1556897-0274-4B55-BF7C-F9D9CD4D3162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B102ABE-D00A-4651-A345-BC1063EF6B0C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
