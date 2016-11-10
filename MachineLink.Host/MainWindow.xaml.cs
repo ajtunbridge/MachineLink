@@ -27,18 +27,19 @@ namespace MachineLink.Host
         public MainWindow()
         {
             InitializeComponent();
-
+            Loaded += (sender, args) => StartButton_OnClick(this, null);
         }
         
         private void StartButton_OnClick(object sender, RoutedEventArgs e)
         {
-            _host = new ServiceHost(typeof(Service.MachineLinkService), new Uri("http://localhost:20101/MachineLink"));
-
+            _host = new ServiceHost(typeof(Service.MachineLinkService), new Uri("http://192.168.0.2:20101/MachineLink"));
+            
             // Service host is opened on the UI thread
-            _host.AddServiceEndpoint(typeof(Service.IMachineLinkService), new WSHttpBinding(), "MachineLink");
-
+            _host.AddServiceEndpoint(typeof(Service.IMachineLinkService), new BasicHttpBinding(), "MachineLink");
+            
             // Enable metadata exchange
             ServiceMetadataBehavior smb = new ServiceMetadataBehavior() { HttpGetEnabled = true };
+            
             _host.Description.Behaviors.Add(smb);
 
             // Enable exeption details

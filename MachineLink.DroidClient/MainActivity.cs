@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -8,10 +9,10 @@ using Android.OS;
 
 namespace MachineLink.DroidClient
 {
-    [Activity(Label = "MachineLink.DroidClient", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "CPE - MachineLink", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        public static readonly EndpointAddress EndPoint = new EndpointAddress("http://192.168.0.2:20101/MachineLink/MachineLink");
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -22,9 +23,48 @@ namespace MachineLink.DroidClient
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            Button button = FindViewById<Button>(Resource.Id.DownloadButton);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            button.Click += DownloadButton_Click;
+        }
+
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "BasicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 10);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            return binding;
+        }
+
+        private void DownloadButton_Click(object sender, EventArgs e)
+        {
+            var client = new MachineLinkServiceClient(CreateBasicHttp(), EndPoint);
+
+            var textView = FindViewById<TextView>(Resource.Id.ResponseText);
+
+            textView.Text = "working...";
+
+            client.TestMethodCompleted += (o, args) =>
+            {
+                if (args.Error != null)
+                {
+                    RunOnUiThread(() =>
+                        textView.Text = args.Error.Message);
+                }
+                else
+                {
+                    RunOnUiThread(() => textView.Text = args.Result);
+                }
+            };
+
+            client.TestMethodAsync();
         }
     }
 }

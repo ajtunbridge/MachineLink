@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using directives
+
+using System;
 using System.ServiceModel;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MachineLink.DesktopClient.MachineLinkServiceReference;
+using MachineLink.DesktopClient.MachineLinkService;
+
+#endregion
 
 namespace MachineLink.DesktopClient
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        MachineLinkServiceClient _svc = new MachineLinkServiceClient();
+        private MachineLinkServiceClient _svc = new MachineLinkServiceClient();
 
         public MainWindow()
         {
@@ -30,6 +23,8 @@ namespace MachineLink.DesktopClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ReponseText.Text = "working....";
+
             Progress.Visibility = Visibility.Visible;
 
             if (_svc.InnerChannel.State == CommunicationState.Faulted)
@@ -38,10 +33,34 @@ namespace MachineLink.DesktopClient
                 _svc = new MachineLinkServiceClient();
             }
 
-            _svc.BeginDownloadProgram(Callback, null);
+            _svc.BeginTestMethod(TestMethodCallback, _svc);
+
+            //_svc.BeginDownloadProgram(DownloadProgramCallback, _svc);
         }
 
-        private void Callback(IAsyncResult r)
+        private void TestMethodCallback(IAsyncResult r)
+        {
+            try
+            {
+                var response = _svc.EndTestMethod(r);
+
+                Dispatcher.Invoke((Action) delegate
+                {
+                    ReponseText.Text = response;
+                    Progress.Visibility = Visibility.Hidden;
+                });
+            }
+            catch (Exception ex)
+            {
+                Dispatcher.Invoke((Action)delegate
+                {
+                    ReponseText.Text = ex.ToString();
+                    Progress.Visibility = Visibility.Hidden;
+                });
+            }
+        }
+
+        private void DownloadProgramCallback(IAsyncResult r)
         {
             try
             {
@@ -55,12 +74,16 @@ namespace MachineLink.DesktopClient
             }
             catch (Exception ex)
             {
-                Dispatcher.Invoke((Action)delegate
+                Dispatcher.Invoke((Action) delegate
                 {
-                    ReponseText.Text = "AN ERROR OCCURRED!";
+                    ReponseText.Text = ex.ToString();
                     Progress.Visibility = Visibility.Hidden;
                 });
             }
+        }
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

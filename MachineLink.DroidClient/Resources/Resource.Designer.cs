@@ -61,7 +61,10 @@ namespace MachineLink.DroidClient
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int MyButton = 2131034112;
+			public const int DownloadButton = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int ResponseText = 2131034113;
 			
 			static Id()
 			{

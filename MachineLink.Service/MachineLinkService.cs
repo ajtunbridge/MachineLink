@@ -1,6 +1,7 @@
 ﻿#region Imports
 
 using System;
+using System.ServiceModel;
 using System.Threading;
 using MachineLink.IO;
 
@@ -51,6 +52,23 @@ namespace MachineLink.Service
             var response = ((GenericAsyncResult<DownloadProgramResponse>) r).Data;
 
             return response;
+        }
+
+        public IAsyncResult BeginTestMethod(AsyncCallback callback, object state)
+        {
+            // simulate something interesting
+            Thread.Sleep(3000);
+
+            var result = new GenericAsyncResult<string> {Data = "The test method executed successfully!"};
+
+            return result;
+        }
+
+        public string EndTestMethod(IAsyncResult r)
+        {
+            var result = ((GenericAsyncResult<string>) r).Data;
+
+            return result;
         }
     }
 }

@@ -10,5 +10,10 @@ namespace MachineLink.Service
         IAsyncResult BeginDownloadProgram(AsyncCallback callback, object state);
 
         DownloadProgramResponse EndDownloadProgram(IAsyncResult r);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginTestMethod(AsyncCallback callback, object state);
+
+        string EndTestMethod(IAsyncResult r);
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d5f27f2c-4b69-43ef-947c-7e5e64a631cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fcc43690-6399-4a71-868e-ea8ce3f5ed1b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,11 +21,11 @@
     <MetadataSource Address="http://localhost:20101/MachineLink?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MachineLink.xsd" MetadataType="Schema" ID="f1481c83-a4f7-458d-afc3-a26a0ca2871d" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd2" />
-    <MetadataFile FileName="MachineLink1.xsd" MetadataType="Schema" ID="d0aea543-95ae-4bce-b3b0-5d459bf633a2" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd1" />
-    <MetadataFile FileName="MachineLink2.xsd" MetadataType="Schema" ID="b93b3b60-5d20-45a8-a4be-5e6f866e7fb1" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd3" />
-    <MetadataFile FileName="MachineLinkService.wsdl" MetadataType="Wsdl" ID="f19c0e37-0bf3-466b-8da3-dde04e690aed" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?wsdl" />
-    <MetadataFile FileName="MachineLink3.xsd" MetadataType="Schema" ID="674cde09-f83e-414b-b3df-1feb768cd122" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd0" />
+    <MetadataFile FileName="MachineLink.xsd" MetadataType="Schema" ID="42cbccea-f0f6-459c-ab4f-8a25d1909241" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd2" />
+    <MetadataFile FileName="MachineLink1.xsd" MetadataType="Schema" ID="3dad9abe-8bfd-4fdf-8250-2193e1dfa76c" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd1" />
+    <MetadataFile FileName="MachineLink2.xsd" MetadataType="Schema" ID="dfac4ede-9d4d-4f43-aa3b-2f363fa9d92f" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd3" />
+    <MetadataFile FileName="MachineLinkService.wsdl" MetadataType="Wsdl" ID="5d532394-efcf-4ece-a7b3-d0a2647e20bc" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?wsdl" />
+    <MetadataFile FileName="MachineLink3.xsd" MetadataType="Schema" ID="e1e11a54-a881-440b-84e9-9c9a1c54a77c" SourceId="1" SourceUrl="http://localhost:20101/MachineLink?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

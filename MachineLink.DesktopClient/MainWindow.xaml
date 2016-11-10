@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MachineLink.DesktopClient"
         mc:Ignorable="d"
+        Loaded="MainWindow_OnLoaded"
         Title="MainWindow" Height="700" Width="900">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <Button Content="Download program" Padding="5" Margin="5" FontSize="14" Click="Button_Click"/>

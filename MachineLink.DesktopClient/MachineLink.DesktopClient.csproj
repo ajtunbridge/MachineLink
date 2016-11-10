@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\MachineLinkServiceReference\Reference.cs">
+    <Compile Include="Service References\MachineLinkService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -97,37 +97,37 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\MachineLinkServiceReference\MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse.datasource">
+    <None Include="Service References\MachineLinkService\MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MachineLinkServiceReference\MachineLink.xsd">
+    <None Include="Service References\MachineLinkService\MachineLink.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MachineLinkServiceReference\MachineLink1.xsd">
+    <None Include="Service References\MachineLinkService\MachineLink1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MachineLinkServiceReference\MachineLink2.xsd">
+    <None Include="Service References\MachineLinkService\MachineLink2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MachineLinkServiceReference\MachineLink3.xsd">
+    <None Include="Service References\MachineLinkService\MachineLink3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MachineLinkServiceReference\MachineLinkService.wsdl" />
+    <None Include="Service References\MachineLinkService\MachineLinkService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MachineLinkServiceReference\" />
+    <WCFMetadataStorage Include="Service References\MachineLinkService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MachineLinkServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\MachineLinkService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MachineLinkServiceReference\configuration.svcinfo" />
+    <None Include="Service References\MachineLinkService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MachineLinkServiceReference\Reference.svcmap">
+    <None Include="Service References\MachineLinkService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

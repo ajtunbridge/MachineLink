@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MachineLink.DesktopClient.MachineLinkServiceReference {
+namespace MachineLink.DesktopClient.MachineLinkService {
     using System.Runtime.Serialization;
     using System;
     
@@ -75,20 +75,28 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MachineLinkServiceReference.IMachineLinkService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MachineLinkService.IMachineLinkService")]
     public interface IMachineLinkService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMachineLinkService/DownloadProgram", ReplyAction="http://tempuri.org/IMachineLinkService/DownloadProgramResponse")]
-        MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse DownloadProgram();
+        MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse DownloadProgram();
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMachineLinkService/DownloadProgram", ReplyAction="http://tempuri.org/IMachineLinkService/DownloadProgramResponse")]
         System.IAsyncResult BeginDownloadProgram(System.AsyncCallback callback, object asyncState);
         
-        MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse EndDownloadProgram(System.IAsyncResult result);
+        MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse EndDownloadProgram(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMachineLinkService/TestMethod", ReplyAction="http://tempuri.org/IMachineLinkService/TestMethodResponse")]
+        string TestMethod();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMachineLinkService/TestMethod", ReplyAction="http://tempuri.org/IMachineLinkService/TestMethodResponse")]
+        System.IAsyncResult BeginTestMethod(System.AsyncCallback callback, object asyncState);
+        
+        string EndTestMethod(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMachineLinkServiceChannel : MachineLink.DesktopClient.MachineLinkServiceReference.IMachineLinkService, System.ServiceModel.IClientChannel {
+    public interface IMachineLinkServiceChannel : MachineLink.DesktopClient.MachineLinkService.IMachineLinkService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -102,23 +110,48 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
             this.results = results;
         }
         
-        public MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse Result {
+        public MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse)(this.results[0]));
+                return ((MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse)(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MachineLinkServiceClient : System.ServiceModel.ClientBase<MachineLink.DesktopClient.MachineLinkServiceReference.IMachineLinkService>, MachineLink.DesktopClient.MachineLinkServiceReference.IMachineLinkService {
+    public partial class TestMethodCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TestMethodCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MachineLinkServiceClient : System.ServiceModel.ClientBase<MachineLink.DesktopClient.MachineLinkService.IMachineLinkService>, MachineLink.DesktopClient.MachineLinkService.IMachineLinkService {
         
         private BeginOperationDelegate onBeginDownloadProgramDelegate;
         
         private EndOperationDelegate onEndDownloadProgramDelegate;
         
         private System.Threading.SendOrPostCallback onDownloadProgramCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTestMethodDelegate;
+        
+        private EndOperationDelegate onEndTestMethodDelegate;
+        
+        private System.Threading.SendOrPostCallback onTestMethodCompletedDelegate;
         
         public MachineLinkServiceClient() {
         }
@@ -141,7 +174,9 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
         
         public event System.EventHandler<DownloadProgramCompletedEventArgs> DownloadProgramCompleted;
         
-        public MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse DownloadProgram() {
+        public event System.EventHandler<TestMethodCompletedEventArgs> TestMethodCompleted;
+        
+        public MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse DownloadProgram() {
             return base.Channel.DownloadProgram();
         }
         
@@ -151,7 +186,7 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse EndDownloadProgram(System.IAsyncResult result) {
+        public MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse EndDownloadProgram(System.IAsyncResult result) {
             return base.Channel.EndDownloadProgram(result);
         }
         
@@ -160,7 +195,7 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
         }
         
         private object[] OnEndDownloadProgram(System.IAsyncResult result) {
-            MachineLink.DesktopClient.MachineLinkServiceReference.DownloadProgramResponse retVal = this.EndDownloadProgram(result);
+            MachineLink.DesktopClient.MachineLinkService.DownloadProgramResponse retVal = this.EndDownloadProgram(result);
             return new object[] {
                     retVal};
         }
@@ -187,6 +222,54 @@ namespace MachineLink.DesktopClient.MachineLinkServiceReference {
                 this.onDownloadProgramCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDownloadProgramCompleted);
             }
             base.InvokeAsync(this.onBeginDownloadProgramDelegate, null, this.onEndDownloadProgramDelegate, this.onDownloadProgramCompletedDelegate, userState);
+        }
+        
+        public string TestMethod() {
+            return base.Channel.TestMethod();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTestMethod(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTestMethod(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndTestMethod(System.IAsyncResult result) {
+            return base.Channel.EndTestMethod(result);
+        }
+        
+        private System.IAsyncResult OnBeginTestMethod(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginTestMethod(callback, asyncState);
+        }
+        
+        private object[] OnEndTestMethod(System.IAsyncResult result) {
+            string retVal = this.EndTestMethod(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTestMethodCompleted(object state) {
+            if ((this.TestMethodCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TestMethodCompleted(this, new TestMethodCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TestMethodAsync() {
+            this.TestMethodAsync(null);
+        }
+        
+        public void TestMethodAsync(object userState) {
+            if ((this.onBeginTestMethodDelegate == null)) {
+                this.onBeginTestMethodDelegate = new BeginOperationDelegate(this.OnBeginTestMethod);
+            }
+            if ((this.onEndTestMethodDelegate == null)) {
+                this.onEndTestMethodDelegate = new EndOperationDelegate(this.OnEndTestMethod);
+            }
+            if ((this.onTestMethodCompletedDelegate == null)) {
+                this.onTestMethodCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTestMethodCompleted);
+            }
+            base.InvokeAsync(this.onBeginTestMethodDelegate, null, this.onEndTestMethodDelegate, this.onTestMethodCompletedDelegate, userState);
         }
     }
 }
